@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/Ravikiranmasule/jenkins_docker_java_hello_world.git'
+               git branch: 'main',  git 'https://github.com/Ravikiranmasule/jenkins_docker_java_hello_world.git'
             }
         }
         stage('Build Docker Image') {
