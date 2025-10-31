@@ -18,7 +18,8 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image('java-hello').run()
+                   def output = sh(script: "docker run --rm java-hello", returnStdout: true).trim()
+            echo "Java Output:\n${output}"
                 }
             }
         }
